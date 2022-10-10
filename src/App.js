@@ -7,6 +7,8 @@ import SideBar from "./sideBar";
 import TopBar from "./TopBar";
 import User from "./User";
 import Product from "./Product";
+import CreateUser from "./CreateUser";
+import ViewUser from "./ViewUser";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
               <Route path="/dashboard" element={<DashBoard></DashBoard>}></Route>
               <Route path="/users" element={<User></User>}></Route>
               <Route path="/products" element={<Product></Product>}></Route>
+              <Route path="/create_user" element={<CreateUser></CreateUser>}></Route>
+              <Route path="/user/:id" element={<ViewUser></ViewUser>}></Route>
             </Routes>
           </div>
         </div>
