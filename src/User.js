@@ -26,10 +26,25 @@ function User() {
         DOB:"02/03/1992",
         Phone:"9047474542",
         Gender:"Female"
+      },
+      {
+        id:3,
+        UserName:"Person3",
+        Email:"person3@gmail.com",
+        Country:"India",
+        State:"Kerala",
+        Area:"Cochin",
+        DOB:"02/03/1992",
+        Phone:"9047474542",
+        Gender:"Female"
       }
     ])
   }, [])
   
+  const DeleteUser = (user)=>{
+    console.log(user);
+    // alert(`User ${user.id} is Deleted`)
+  }
   return (
     <div>
       <div class="container-fluid">
@@ -48,7 +63,7 @@ function User() {
           <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>USerName</th>
+                                            <th>UserName</th>
                                             <th>Email</th>
                                             <th>Country</th>
                                             <th>State </th>
@@ -62,7 +77,7 @@ function User() {
                                     <tfoot>
                                         <tr>
                                         <th>ID</th>
-                                            <th>USerName</th>
+                                            <th>UserName</th>
                                             <th>Email</th>
                                             <th>Country</th>
                                             <th>State </th>
@@ -86,7 +101,12 @@ function User() {
                                           <td>{user.DOB}</td>
                                           <td>{user.Phone}</td>
                                           <td>{user.Gender}</td>
-                                          <td><button className='btn btn-warning'>View</button></td>
+                                          <td><Link to={`/user/${user.id}`} className='btn btn-warning mr-1 mb-1'>View</Link>
+                                          <Link to={`/edit/${user.id}`} className='btn btn-primary mr-1 mb-1'>Edit</Link>
+                                          <button onClick={(user)=>{
+                                            DeleteUser(user);
+                                          }} className='btn btn-danger mr-1 mb-1'>Delete</button>
+                                          </td>
                                       </tr>
                                         })
                                        }
